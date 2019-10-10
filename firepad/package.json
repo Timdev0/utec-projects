@@ -1,0 +1,22 @@
+{
+  "name": "firepad",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TotomInc/firepad.git"
+  },
+  "author": "TotomInc <cazade.thomas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TotomInc/firepad/issues"
+  },
+  "homepage": "https://github.com/TotomInc/firepad#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
