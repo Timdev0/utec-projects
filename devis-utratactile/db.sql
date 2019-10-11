@@ -56,6 +56,8 @@ CREATE TABLE `personne`
 (255) NOT NULL,
   `perso_civilite` int
 (255) NOT NULL,
+  `role` int
+(255) NOT NULL,
   `perso_phone` varchar
 (10) NOT NULL,
   `perso_mail` varchar
