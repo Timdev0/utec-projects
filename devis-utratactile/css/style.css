@@ -1,0 +1,179 @@
+.tab {
+    display: none;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #007BFF;
+}
+
+legend {
+    text-align: center;
+}
+
+.align-element {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.prev-next {
+    margin-bottom: 16px;
+}
+
+.min-h {
+    min-height: 306px;
+}
+
+.marg-ltab {
+    margin-bottom: 1rem;
+}
+
+input.invalid {
+    background-color: #ffdddd;
+}
+
+.table-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.align-endform {
+    text-align: center;
+}
+
+.redirection-text {
+    margin-top: 24px;
+    margin-bottom: 4px;
+    font-size: 14px !important;
+}
+
+.redi-button {
+    font-size: 14px !important;
+}
+
+.bg-my1 {
+    background-color: #828995;
+}
+
+.bg-my2 {
+    background-color: #FFFFFF;
+}
+
+.step-marg {
+    margin-bottom: 8px;
+}
+
+.form-marg {
+    margin-top: 16px;
+    border-radius: 8px;
+}
+
+.vertical-center {
+    padding: 30px 0;
+}
+
+.pad-first {
+    margin-bottom: 10px;
+}
+
+.pad-snd {
+    padding-top: 10px;
+}
+
+.vertical-center-2 {
+    padding: 70px 0;
+}
+
+.title-devis {
+    font-weight: bold;
+    font-style: unset;
+    text-decoration: underline;
+}
+
+.title-form {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.appel {
+    padding-top: 10px;
+}
+
+.appel1 {
+    text-decoration: underline;
+}
+
+.pad-top-form {
+    padding-top: 35px;
+}
+
+.img-prop {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.little-msg {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.marg-captcha {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.pad-top-form1 {
+    padding-top: 20px;
+}
+
+.welcome {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
+    padding-bottom: 22px;
+    background-color: #e7ecef;
+    border-radius: .3rem;
+    min-width: 30%;
+    text-align: center;
+    float: right;
+}
+
+.btn-nav {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@media (min-width: 992px) {
+    .btn-nav {
+        padding: .5rem 1rem;
+    }
+}

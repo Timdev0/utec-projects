@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Projet Firepad — Éditeur</title>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+  <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <script src="firepad-userlist.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="firepad-userlist.css" />
+</head>
+
+<body onload="init()">
+  <div id="auth"></div>
+
+  <div id="app">
+    <div id="userlist"></div>
+    <div id="firepad"></div>
+  </div>
+
+  <script>
+    function init() {
+      var config = {
+        apiKey: "AIzaSyD_dm5NiC9BfUvUYr1w2xQ_5cUhRJrV_iw",
+        authDomain: "firepad-812eb.firebaseapp.com",
+        databaseURL: "https://firepad-812eb.firebaseio.com",
+        projectId: "firepad-812eb",
+        storageBucket: "firepad-812eb.appspot.com",
+        messagingSenderId: "510010682153"
+      };
+
+      firebase.initializeApp(config);
+
+      var firepadRef = getExampleRef();
+
+      var codeMirror = CodeMirror(document.getElementById('firepad'), {
+        lineWrapping: true
+      });
+
+      var userId = Math.floor(Math.random() * 9999999999).toString();
+
+      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
+        richTextToolbar: true,
+        richTextShortcuts: true,
+        userId: userId
+      });
+
+      firepad.on('ready', function () {
+        if (firepad.isHistoryEmpty()) {
+          firepad.setText('Regarde la liste des utilisateurs sur la gauche !');
+        }
+      });
+
+      var firepadUserList;
+
+      /**
+       * On détecte si l'utilisateur est connecté. S'il ne l'est pas, on le
+       * redirige vers la page de login. Par contre si un utilisateur est
+       * connecté, on prends ses données du compte (nom, email, ...) et on
+       * défini le nom du compte Firepad.
+       */
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var isAnonymous = user.isAnonymous;
+          var name = user.displayName;
+          var email = user.email;
+          var photoUrl = user.photoURL;
+          var uid = user.uid;
+          if (!isAnonymous) {
+            firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'), document.getElementById('userlist'), userId, name);
+          } 
+          else {
+            firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),document.getElementById('userlist'), userId);
+          }
+        } 
+        else {
+          window.location.replace('http://localhost:8080/login');
+        }
+      });
+    }
+
+    // Helper to get hash from end of URL or generate a random one.
+    function getExampleRef() {
+      var ref = firebase.database().ref();
+      var hash = window.location.hash.replace(/#/g, '');
+      if (hash) {
+        ref = ref.child(hash);
+      } else {
+        ref = ref.push(); // generate unique location.
+        window.location = window.location + '#' + ref.key; // add it as a hash to the URL.
+      }
+      if (typeof console !== 'undefined') {
+        console.log('Firebase data: ', ref.toString());
+      }
+      return ref;
+    }
+  </script>
+</body>
+</html>

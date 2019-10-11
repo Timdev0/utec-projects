@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Projet Firepad — Login</title>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1 class="title-login">Bienvenue sur l'éditeur Firepad.</h1>
+
+  <div id="auth-container"></div>
+
+  <div id="loader">Chargement ...</div>
+
+  <script>
+    var config = {
+      apiKey: "AIzaSyD_dm5NiC9BfUvUYr1w2xQ_5cUhRJrV_iw",
+      authDomain: "firepad-812eb.firebaseapp.com",
+      databaseURL: "https://firepad-812eb.firebaseio.com",
+      projectId: "firepad-812eb",
+      storageBucket: "firepad-812eb.appspot.com",
+      messagingSenderId: "510010682153"
+    };
+
+    firebase.initializeApp(config);
+
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+    var uiConfig = {
+      callbacks: {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+          // User successfully signed in.
+          // Return type determines whether we continue the redirect automatically
+          // or whether we leave that to developer to handle.
+          return true;
+        },
+        uiShown: function () {
+          // The widget is rendered, hide the loader.
+          document.getElementById('loader').style.display = 'none';
+        }
+      },
+      // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+      signInFlow: 'popup',
+      signInSuccessUrl: 'http://localhost:8080',
+      signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      ],
+      tosUrl: 'https://google.com/',
+      privacyPolicyUrl: 'https://google.com/'
+    };
+
+    ui.start('#auth-container', uiConfig);
+
+    // Google login
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+  </script>
+</body>

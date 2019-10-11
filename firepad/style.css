@@ -1,0 +1,42 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  position: relative;
+}
+
+#firepad {
+  position: absolute;
+  left: 175px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: auto;
+}
+
+.title-login{
+  padding: 1rem;
+  font-weight: normal;
+}
+
+#app{
+  height: 100%;
+}
+
+#userlist{
+  height: 100%;
+}
+
+.firepad-userlist{
+  height: 100% !important;
+}
+.firepad-userlist-heading{
+  margin: 0 15px 0 2px !important;
+}

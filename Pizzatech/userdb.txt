@@ -1,0 +1,3 @@
+root:root
+admin:n3NrT0565sK8GA8L
+localhost:u46ZrRG2Beq9heiz
