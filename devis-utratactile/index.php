@@ -49,7 +49,11 @@ if (isset($_GET['logout'])) {
                     <a class="btn btn-primary btn-lg first" href="/devis/login.php" role="button">Se connecter</a>
                     <a class="btn btn-primary btn-lg" href="/devis/register.php" role="button">S'enregistrer</a>
                 <?php endif ; ?>
-                <a class="btn btn-primary btn-lg last" href="/devis/devis.php" role="button">Faire une demande de devis</a>
+                <?php if (!isset($_SESSION['username'])): ?>
+                    <a class="btn btn-primary btn-lg last" href="/devis/devis.php" role="button">Faire une demande de devis</a>
+                <?php else :?>
+                    <a class="btn btn-primary btn-lg last" href="/devis/devis-log.php" role="button">Faire une demande de devis</a>
+                <?php endif?>
                 </p>
             </div>
             <div class="content">
