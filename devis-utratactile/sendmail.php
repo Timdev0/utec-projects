@@ -41,7 +41,7 @@
                     $myid = "";
 
                     // Ma clé privée
-                    $secret = "6Lc41V0UAAAAAIga0Xt_MPF05rVhNcksqbfNtIZS";
+                    $secret = "";
 
                     // Paramètre renvoyé par le recaptcha
                     $response = $_POST['g-recaptcha-response'];
@@ -240,8 +240,8 @@
                                         $mail->SMTPSecure = sec2; // Gmail requiert le transfert sécurisé
                                         $mail->Host = 'smtp.gmail.com';
                                         $mail->Port = port2;
-                                        $mail->Username = 'tim089140@gmail.com';
-                                        $mail->Password = 'Gypsy89140_';
+                                        $mail->Username = '';
+                                        $mail->Password = '';
                                         $mail->SetFrom($from, $from_name);
                                         $mail->Subject = $subject;
                                         $mail->isHTML(true);
