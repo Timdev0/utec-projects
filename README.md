@@ -9,4 +9,7 @@ Portfolio for the E6 test.
 This quote use PHPMailer, I made it during my internship at Ultratactile.
 
 ### [Pizzatech](http://pizzatech.planetcloudhosting.cf/Pizzatech/)
-Online restaurant for school project.
+Online restaurant. You can login, register and order pizza. As employee you have a CMS and you can add products.
+
+### [Firepad]()
+Text editor (firebase / firepad) in collaboration.
