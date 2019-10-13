@@ -8,5 +8,5 @@ Portfolio for the E6 test.
 ### [Devis - Ultratactile](http://devis.planetcloudhosting.cf/devis/)
 This quote use PHPMailer, I made it during my internship at Ultratactile.
 
-### [Pizzatech](http://pizzatech.planetcloudhosting.cf/pizzatech/)
+### [Pizzatech](http://pizzatech.planetcloudhosting.cf/Pizzatech/)
 Online restaurant for school project.
