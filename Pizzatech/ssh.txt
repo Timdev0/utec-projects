@@ -1,1 +1,0 @@
-ssh -i ~/.ssh/gcp-pizzatech quentin_peltier_pro@34.76.88.243
