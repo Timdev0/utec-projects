@@ -12,4 +12,4 @@ This quote use PHPMailer, I made it during my internship at Ultratactile.
 Online restaurant. You can login, register and order pizza. As employee you have a CMS and you can add products.
 
 ### [Firepad]()
-Text editor (firebase / firepad) in collaboration.
+Text editor (firebase / firepad) made in collaboration.
