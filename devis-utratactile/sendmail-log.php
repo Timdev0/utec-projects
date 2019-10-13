@@ -237,9 +237,7 @@
                                                     'Ultratactile', 'Demande de devis',$messageClient.$messageMail);
                                 if (true !== $result2) {
                                     echo $result2;
-                                }
-                                else echo "<br>Un mail avec vos informations de connexion a été envoyé";
-                                
+                                }                                
                             } 
                             else {
                                 echo "Une erreur c'est produite lors de l'envois du formulaire, réessayer ultérieurement.<br>";
